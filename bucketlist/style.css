@@ -1,0 +1,15 @@
+/* Note to self: will need a separate css file for the homepage and a separate one for the other pages,
+if we make the homepage be a closed book. Unless we just do a pad of paper or something.
+The image will have to be changed, if that's what we're using as the background & then basing
+the html off of that, but that could cause problems with making the browser smaller. -MH */
+
+/*body {
+    background-image: url("book image");
+    background-repeat: no-repeat;
+}*/
+
+.rectangle {
+  width: 500px;
+  height: 700px;
+  background-color: blue;
+}
