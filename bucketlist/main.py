@@ -24,7 +24,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class MyHandler(webapp2.RequestHandler):
+class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         template = JINJA_ENVIRONMENT.get_template('homepage.html')
@@ -39,11 +39,11 @@ class MyHandler(webapp2.RequestHandler):
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 
-
-class MainHandler(webapp2.RequestHandler):
+class MyHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write("Hello world")
 
+
 app = webapp2.WSGIApplication([
-    ('/', MyHandler)
+    ('/', MainHandler), ('/discover', MyHandler)
 ], debug=True)
