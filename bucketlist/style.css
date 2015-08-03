@@ -10,13 +10,13 @@ the html off of that, but that could cause problems with making the browser smal
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
-ul {
+#navlist {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+.navlinks {
     display: inline;
     padding: 90px;
     font-family: 'ubuntu';
