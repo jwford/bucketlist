@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View blog entries</title>
+    <link rel="stylesheet" type="text/css" href="Static/style.css">
+  </head>
+  <body>
+    <h1>My Bucket List</h1>
+    <hr/>
+
+    <section>
+      {% for blog_entry in posts: %}
+      <h2>{{blog_entry.db_title}}</h2>
+      <p>
+        {{blog_entry.db_entry}}
+      </p>
+      {% endfor %}
+    <section>
+  </body>
+</html>
