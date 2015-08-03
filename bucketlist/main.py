@@ -17,6 +17,7 @@
 import webapp2
 import os
 import jinja2
+from datetime import datetime
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
@@ -46,6 +47,7 @@ class AboutHandler(webapp2.RequestHandler):
 
 class BucketList(ndb.Model):
     db_entry = ndb.StringProperty(required=True)
+    db_date = ndb.DateTimeProperty(required=True)
 
 class NewHandler(webapp2.RequestHandler):
     def get(self):
@@ -55,7 +57,7 @@ class NewHandler(webapp2.RequestHandler):
 class BucketListSaver(webapp2.RequestHandler):
     def post(self):
         entry = self.request.get('entry_in_form')
-        db_bucket_list = BucketList(db_entry=entry)
+        db_bucket_list = BucketList(db_entry=entry, db_date=datetime.now())
         db_bucket_list.put()
         template = JINJA_ENVIRONMENT.get_template('thanks.html')
         self.response.write(template.render())
@@ -63,6 +65,7 @@ class BucketListSaver(webapp2.RequestHandler):
 class CurrentHandler(webapp2.RequestHandler):
     def get(self):
         list_query = BucketList.query()
+        list_query = list_query.order(BucketList.db_date)
         list_data = list_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('current-list.html')
         self.response.write(template.render({'entries' : list_data}))
