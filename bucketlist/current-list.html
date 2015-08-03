@@ -1,25 +1,10 @@
-<!doctype html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="Static/style.css">
-  <title>Conquer Tomorrow</title>
-</head>
+{% extends "base.html" %}
 
-<body>
-  <nav id="navbar">
-    <ul id="navlist">
-      <li class="navlinks"><a href = "/">Home</a></li>
-      <li class="navlinks"><a href = "/about-us">About Us</a></li>
-      <li class="navlinks"><a href = "/new-adventure">Add New Adventure</a></li>
-      <li class="navlinks"><a href = "/current-list">My Current List</a></li>
-      <li class="navlinks"><a href = "/completed-list">Completed Adventures</a></li>
-      <li class="navlinks"><a href = "/discover">Discover!</a></li>
-    </ul>
-  </nav>
+{% block content %}
 
-  <h1>
-    My Bucket List
-  </h1>
+  <div id="current_header">
+    <h1>My Bucket List</h1>
+  </div>
 
   <section>
     {% for entry in entries %}
@@ -30,5 +15,5 @@
     {% endfor %}
   <section>
 
-  </body>
-</html>
+
+{% endblock %}
