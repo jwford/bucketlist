@@ -14,17 +14,22 @@ the html off of that, but that could cause problems with making the browser smal
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .navlinks {
-    display: inline;
-    padding: 90px;
+    width: 20%;
     font-family: 'ubuntu';
+    float: left;
 }
 
 #navbar {
   border: medium solid #BADA55;
   width: 100%;
+}
+
+h1 {
+  clear: both;
 }
 
 /*end navbar stuff */
