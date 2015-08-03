@@ -38,10 +38,15 @@ class MainHandler(webapp2.RequestHandler):
 
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+class AboutHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('about-us.html')
+        self.response.write(template.render())
+
 class BucketList(ndb.Model):
     db_entry = ndb.StringProperty(required=True)
 
-class NewAdventureCreator(webapp2.RequestHandler):
+class NewHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
         self.response.write(template.render())
@@ -54,28 +59,12 @@ class BucketListSaver(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('thanks.html')
         self.response.write(template.render())
 
-class BucketListViewer(webapp2.RequestHandler):
+class CurrentHandler(webapp2.RequestHandler):
     def get(self):
         list_query = BucketList.query()
         list_data = list_query.fetch()
         template = JINJA_ENVIRONMENT.get_template('current-list.html')
-        self.response.write(template.render({'entries' : blog_data}))
-
-
-class AboutHandler(webapp2.RequestHandler):
-    def get(self):
-        template = JINJA_ENVIRONMENT.get_template('about-us.html')
-        self.response.write(template.render())
-
-class NewHandler(webapp2.RequestHandler):
-    def get(self):
-        template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
-        self.response.write(template.render())
-
-class CurrentHandler(webapp2.RequestHandler):
-    def get(self):
-        template = JINJA_ENVIRONMENT.get_template('current-list.html')
-        self.response.write(template.render())
+        self.response.write(template.render({'entries' : list_data}))
 
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
@@ -91,6 +80,6 @@ class DiscoverHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler), ('/about-us', AboutHandler), ('/new-adventure', NewHandler),
     ('/current-list', CurrentHandler), ('/completed-list', CompletedHandler),
-    ('/discover', DiscoverHandler), ('/save', BucketListSaver),
-    ('/view', BucketListViewer)
+    ('/discover', DiscoverHandler), ('/save', BucketListSaver)
+
 ], debug=True)
