@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>View blog entries</title>
-    <link rel="stylesheet" type="text/css" href="Static/style.css">
-  </head>
-  <body>
-    <nav id="navbar">
-      <ul id="navlist">
-        <li class="navlinks"><a href = "/">Home</a></li>
-        <li class="navlinks"><a href = "/about-us">About Us</a></li>
-        <li class="navlinks"><a href = "/new-adventure">Add New Adventure</a></li>
-        <li class="navlinks"><a href = "/current-list">My Current List</a></li>
-        <li class="navlinks"><a href = "/completed-list">Completed Adventures</a></li>
-        <li class="navlinks"><a href = "/discover">Discover!</a></li>
-      </ul>
-    </nav>
+{% extends "base.html" %}
+
+{% block content %}
 
     <h1>Add to your list!</h1>
     <div>
@@ -23,8 +9,8 @@
               <dt>New Adventure:<dt>
               <dd><textarea name="entry_in_form"></textarea></dd>
             </dl>
-            <input type="submit">
+            <input class="myButton" type="submit">
       </form>
     </div>
-  </body>
-</html>
+
+{% endblock %}
