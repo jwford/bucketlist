@@ -8,8 +8,16 @@ the html off of that, but that could cause problems with making the browser smal
     background-repeat: no-repeat;
 }*/
 
-.rectangle {
-  width: 500px;
-  height: 700px;
-  background-color: #B8944D;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+#navbar {
+  border: medium solid #BADA55;
 }
