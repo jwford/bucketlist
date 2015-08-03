@@ -38,12 +38,28 @@ class MainHandler(webapp2.RequestHandler):
 
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
-
-class MyHandler(webapp2.RequestHandler):
+class AboutHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write("Hello world")
+        template = JINJA_ENVIRONMENT.get_template('about-us.html')
+        self.response.write(template.render())
+
+class CurrentHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('current-list.html')
+        self.response.write(template.render())
+
+class CompletedHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('completed-list.html')
+        self.response.write(template.render())
+
+class DiscoverHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('discover.html')
+        self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler), ('/discover', MyHandler)
+    ('/', MainHandler), ('/about-us', AboutHandler), ('/current-list', CurrentHandler),
+    ('/completed-list', CompletedHandler), ('/discover', DiscoverHandler)
 ], debug=True)
