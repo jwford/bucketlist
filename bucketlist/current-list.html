@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="Static/style.css">
   <title>OUR SITE TITLE</title>
 </head>
 
@@ -14,6 +14,18 @@
       <li class="navlinks"><a href = "completed-list.html">Completed Adventures</a></li>
       <li class="navlinks"><a href = "discover.html">Discover!</a></li>
   </nav>
-</body>
 
+    <h1>Add to your list!</h1>
+    <div>
+      <form method="m" action="/save">
+        <dl>
+          <dt>New Adventure:<dt>
+          <dd><input type="text" name="entry"></dd>
+          <dt>Blog entry:<dt>
+          <dd><textarea name="entry_in_form"></textarea></dd>
+        </dl>
+        <input type="submit">
+      </form>
+    </div>
+  </body>
 </html>
