@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View blog entries</title>
+    <link rel="stylesheet" type="text/css" href="Static/style.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul id="navlist">
+        <li class="navlinks"><a href = "/">Home</a></li>
+        <li class="navlinks"><a href = "/about-us">About Us</a></li>
+        <li class="navlinks"><a href = "/new-adventure">Add New Adventure</a></li>
+        <li class="navlinks"><a href = "/current-list">My Current Adventure</a></li>
+        <li class="navlinks"><a href = "/completed-list">Completed Adventures</a></li>
+        <li class="navlinks"><a href = "/discover">Discover!</a></li>
+      </ul>
+    </nav>
+    <h1>My Bucket List</h1>
+
+    <section>
+      {% for blog_entry in posts: %}
+      <h2>{{blog_entry.db_title}}</h2>
+      <p>
+        {{blog_entry.db_entry}}
+      </p>
+      {% endfor %}
+    <section>
+  </body>
+</html>
