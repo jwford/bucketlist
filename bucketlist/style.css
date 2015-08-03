@@ -8,6 +8,8 @@ the html off of that, but that could cause problems with making the browser smal
     background-repeat: no-repeat;
 }*/
 
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -16,6 +18,8 @@ ul {
 
 li {
     display: inline;
+    padding: 90px;
+    font-family: 'ubuntu';
 }
 
 #navbar {
