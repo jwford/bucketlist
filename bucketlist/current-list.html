@@ -18,10 +18,10 @@
   </nav>
 
   <section>
-    {% for blog_entry in posts: %}
-    <h2>{{blog_entry.db_title}}</h2>
+    {% for entry in entries %}
+    <h2>{{entry.db_title}}</h2>
     <p>
-      {{blog_entry.db_entry}}
+      {{entry.db_entry}}
     </p>
     {% endfor %}
   <section>
