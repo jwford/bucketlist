@@ -43,6 +43,11 @@ class AboutHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
         self.response.write(template.render())
 
+class NewHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
+        self.response.write(template.render())
+
 class CurrentHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('current-list.html')
@@ -60,6 +65,7 @@ class DiscoverHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler), ('/about-us', AboutHandler), ('/current-list', CurrentHandler),
-    ('/completed-list', CompletedHandler), ('/discover', DiscoverHandler)
+    ('/', MainHandler), ('/about-us', AboutHandler), ('/new-adventure', NewHandler),
+    ('/current-list', CurrentHandler), ('/completed-list', CompletedHandler),
+    ('/discover', DiscoverHandler)
 ], debug=True)
