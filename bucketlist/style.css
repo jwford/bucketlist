@@ -9,7 +9,7 @@ the html off of that, but that could cause problems with making the browser smal
 }*/
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
-
+/* start navbar stuff */
 #navlist {
     list-style-type: none;
     margin: 0;
@@ -24,4 +24,7 @@ the html off of that, but that could cause problems with making the browser smal
 
 #navbar {
   border: medium solid #BADA55;
+  width: 100%;
 }
+
+/*end navbar stuff */
