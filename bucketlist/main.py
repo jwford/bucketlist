@@ -38,6 +38,33 @@ class MainHandler(webapp2.RequestHandler):
 
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+class BlogPost(ndb.Model):
+    db_title = ndb.StringProperty(required=True)
+    db_entry = ndb.StringProperty(required=True)
+
+class NewAdventureCreator(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
+        self.response.write(template.render())
+
+class BlogPostSaver(webapp2.RequestHandler):
+    def post(self):
+        title = self.request.get('title_in_request')
+        entry = self.request.get('entry_in_request')
+        db_blog_post = BlogPost(db_title=title, db_entry=entry)
+        db_blog_post.put()
+        template = JINJA_ENVIRONMENT.get_template('thanks.html')
+        self.response.write(template.render())
+
+class BlogPostViewer(webapp2.RequestHandler):
+    def get(self):
+        blog_query = BlogPost.query()
+        blog_data = blog_query.fetch()
+        template = JINJA_ENVIRONMENT.get_template('viewer.html')
+        # Send |blog_data| to viewer.html as the value of 'entries'.
+        self.response.write(template.render({'entries' : blog_data}))
+
+
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
