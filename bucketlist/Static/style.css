@@ -18,7 +18,7 @@ the html off of that, but that could cause problems with making the browser smal
 }
 
 .navlinks {
-    width: 20%;
+    width: 15%;
     font-family: 'ubuntu';
     float: left;
 }
@@ -33,3 +33,7 @@ h1 {
 }
 
 /*end navbar stuff */
+
+dt {
+  font-family: 'ubuntu';
+}
