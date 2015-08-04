@@ -38,19 +38,7 @@ dt {
   font-family: 'ubuntu';
 }
 
-#discover_text {
-  display:none;
-}
-
-#discover_list {
-  display: none;
-}
-
-#discover_theory {
-  display: none;
-}
-
-#discover_links {
+.discover_tabs {
   display: none;
 }
 
