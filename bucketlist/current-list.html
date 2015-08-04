@@ -2,11 +2,11 @@
 
 {% block content %}
 
-  <div id="current_header">
+  <div id="current_header" class=page_header>
     <h1>My Bucket List</h1>
   </div>
 
-  <form action="current-list" method="post">
+  <form action="current-list" method="post" class=page_body>
     <section>
       {% for entry in entries %}
       <p>

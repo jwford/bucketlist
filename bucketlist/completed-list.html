@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
+<<<<<<< HEAD
+  <div id=completed_header class=page_header><h1>Look at What I've Accomplished</h1></div>
+=======
   <div id=completed_header><h1>Look at What I've Accomplished</h1></div>
+      {% for entry in entries %}
+
+          <!-- {{entry.db_entry}} -->
+          {{entry.db_entry}}<br/>
+
+      {% endfor %}
+
+>>>>>>> 57dc39e78220ec06cc3a53701eb8de18e8eef8f8
 
 {% endblock %}

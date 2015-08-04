@@ -49,6 +49,10 @@ class BucketList(ndb.Model):
     db_entry = ndb.StringProperty(required=True)
     db_date = ndb.DateTimeProperty(required=True)
 
+class CompletedList(ndb.Model):
+    db_entry = ndb.StringProperty(required=True)
+    db_date = ndb.DateTimeProperty(required=True)
+
 class NewHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
@@ -71,39 +75,28 @@ class CurrentHandler(webapp2.RequestHandler):
         self.response.write(template.render({'entries' : list_data}))
 
     def post(self):
-        key_values = self.request.get('key', allow_multiple=True)
-        print "values are here {}".format(key_values)
+        print 'delete is ' + self.request.get('delete')
+        print 'move is ' + self.request.get('move')
 
-        print key_values
+        key_values = self.request.get('key', allow_multiple=True)
         for key in key_values:
             post_key = ndb.Key(urlsafe=key)
+            result = post_key.get()
             post_key.delete()
+            if self.request.get('move') == 'Completed!':
+                db_completed_list = CompletedList(db_entry=result.db_entry, db_date=datetime.now())
+                db_completed_list.put()
 
-        list_query = BucketList.query()
-        list_query = list_query.order(BucketList.db_date)
-        list_data = list_query.fetch()
-        print "list is {}, length {}".format(list_data, len(list_data))
         return self.get()
 
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('completed-list.html')
-        self.response.write(template.render())
-
-    def post(self):
-        key_values = self.request.get('key', allow_multiple=True)
-        print "values are here {}".format(key_values)
-
-        print key_values
-        for key in key_values:
-            post_key = ndb.Key(urlsafe=key)
-            post_key.delete()
-
-        list_query = BucketList.query()
-        list_query = list_query.order(BucketList.db_date)
+        list_query = CompletedList.query()
+        list_query = list_query.order(CompletedList.db_date)
         list_data = list_query.fetch()
-        print "list is {}, length {}".format(list_data, len(list_data))
-        return self.get()
+        template = JINJA_ENVIRONMENT.get_template('completed-list.html')
+        self.response.write(template.render({'entries' : list_data}))
+
 
 class DiscoverHandler(webapp2.RequestHandler):
     def get(self):
