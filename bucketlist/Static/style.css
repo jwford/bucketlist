@@ -9,6 +9,7 @@ body {
 }
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Aubrey);
 
 /* start navbar stuff */
 #navlist {
@@ -26,10 +27,14 @@ body {
 
 #navbar {
   width: 100%;
+  position:absolute;
+  top: 95px;
+  left: 10px;
 }
 
 h1 {
   clear: both;
+  font-family: 'aubrey', sans-serif;
 }
 /*end navbar stuff */
 
@@ -39,6 +44,7 @@ dt {
 
 h3 {
   cursor: pointer;
+  font-family: 'aubrey', sans-serif;
 }
 
 .discover_tabs {
@@ -110,4 +116,10 @@ textarea {
   position: absolute;
   top: 150px;
   left: 225px;
+}
+
+#greeting {
+  position: absolute;
+  top: 150px;
+  left: 7px
 }
