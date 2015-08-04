@@ -70,6 +70,21 @@ class CurrentHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('current-list.html')
         self.response.write(template.render({'entries' : list_data}))
 
+    def post(self):
+        key_values = self.request.get('key', allow_multiple=True)
+        print "values are here {}".format(key_values)
+
+        print key_values
+        for key in key_values:
+            post_key = ndb.Key(urlsafe=key)
+            post_key.delete()
+
+        list_query = BucketList.query()
+        list_query = list_query.order(BucketList.db_date)
+        list_data = list_query.fetch()
+        print "list is {}, length {}".format(list_data, len(list_data))
+        return self.get()
+
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('completed-list.html')
