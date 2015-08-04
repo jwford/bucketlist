@@ -40,6 +40,7 @@ class MainHandler(webapp2.RequestHandler):
 
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
@@ -55,24 +56,37 @@ class CompletedList(ndb.Model):
 
 class NewHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
-        self.response.write(template.render())
+        user = users.get_current_user()
+        if user:
+            template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
+            self.response.write(template.render())
+        else:
+            self.response.write("<a href='/'>Please Log in!</a>")
+
 
 class BucketListSaver(webapp2.RequestHandler):
     def post(self):
-        entry = self.request.get('entry_in_form')
-        db_bucket_list = BucketList(db_entry=entry, db_date=datetime.now())
-        db_bucket_list.put()
-        template = JINJA_ENVIRONMENT.get_template('thanks.html')
-        self.response.write(template.render())
+        user = users.get_current_user()
+        if user:
+            entry = self.request.get('entry_in_form')
+            db_bucket_list = BucketList(db_entry=entry, db_date=datetime.now())
+            db_bucket_list.put()
+            template = JINJA_ENVIRONMENT.get_template('thanks.html')
+            self.response.write(template.render())
+        else:
+            self.response.write("<a href='/'>Please Log in!</a>")
 
 class CurrentHandler(webapp2.RequestHandler):
     def get(self):
-        list_query = BucketList.query()
-        list_query = list_query.order(BucketList.db_date)
-        list_data = list_query.fetch()
-        template = JINJA_ENVIRONMENT.get_template('current-list.html')
-        self.response.write(template.render({'entries' : list_data}))
+        user = users.get_current_user()
+        if user:
+            list_query = BucketList.query()
+            list_query = list_query.order(BucketList.db_date)
+            list_data = list_query.fetch()
+            template = JINJA_ENVIRONMENT.get_template('current-list.html')
+            self.response.write(template.render({'entries' : list_data}))
+        else:
+            self.response.write("<a href='/'>Please Log in!</a>")
 
     def post(self):
         print 'delete is ' + self.request.get('delete')
@@ -91,11 +105,15 @@ class CurrentHandler(webapp2.RequestHandler):
 
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
-        list_query = CompletedList.query()
-        list_query = list_query.order(CompletedList.db_date)
-        list_data = list_query.fetch()
-        template = JINJA_ENVIRONMENT.get_template('completed-list.html')
-        self.response.write(template.render({'entries' : list_data}))
+        user = users.get_current_user()
+        if user:
+            list_query = CompletedList.query()
+            list_query = list_query.order(CompletedList.db_date)
+            list_data = list_query.fetch()
+            template = JINJA_ENVIRONMENT.get_template('completed-list.html')
+            self.response.write(template.render({'entries' : list_data}))
+        else:
+            self.response.write("<a href='/'>Please Log in!</a>")
 
 
 class DiscoverHandler(webapp2.RequestHandler):
