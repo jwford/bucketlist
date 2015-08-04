@@ -10,12 +10,18 @@
     <section>
       {% for entry in entries %}
       <p>
+<<<<<<< HEAD
         {{entry.db_entry}}
           <input type="checkbox" value="{{entry.key.urlsafe()}}" name="key"><br>
+=======
+          <input type="checkbox" value="{{entry.key.urlsafe()}}" name="key">
+          {{entry.db_entry}}
+>>>>>>> 3b294a5ef9f1f643429e8ed37a8e39dd13a46a80
       </p>
       {% endfor %}
     <section>
     <input id="delete" name="delete" value="Delete" type="submit">
+    <input id="move" name="move" value="Completed!" type="submit">
 
   </form>
 
