@@ -1,6 +1,17 @@
-body {
-    background-image: url("background.png");
+/*body {
+    background-image: url("bubbles.png");
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}*/
+
+body {
+  background-image: url("bubbles.png");
+  background-repeat: repeat-y;
+  position: absolute;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
