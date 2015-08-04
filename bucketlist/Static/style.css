@@ -113,9 +113,9 @@ textarea {
   resize: none;
 }
 
-.headerstuff {
+.page_body {
   position: absolute;
-  top: 180px;
+  top: 190px;
   left: 229px;
 }
 
