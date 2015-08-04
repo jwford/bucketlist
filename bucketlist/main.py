@@ -26,6 +26,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class BucketList(ndb.Model):
+    db_entry = ndb.StringProperty(required=True)
+    db_date = ndb.DateTimeProperty(required=True)
+    ID = ndb.StringProperty(required=True)
+
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            q = ndb.gql("SELECT * FROM BucketList WHERE ID = :1", user.user_id())
+            BucketList = q.get()
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -37,7 +49,6 @@ class MainHandler(webapp2.RequestHandler):
         else:
             greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
                         users.create_login_url('/'))
-
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 
@@ -45,10 +56,6 @@ class AboutHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
         self.response.write(template.render())
-
-class BucketList(ndb.Model):
-    db_entry = ndb.StringProperty(required=True)
-    db_date = ndb.DateTimeProperty(required=True)
 
 class CompletedList(ndb.Model):
     db_entry = ndb.StringProperty(required=True)
@@ -65,15 +72,12 @@ class NewHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
 
-
-
-
 class BucketListSaver(webapp2.RequestHandler):
     def post(self):
         user = users.get_current_user()
         if user:
             entry = self.request.get('entry_in_form')
-            db_bucket_list = BucketList(db_entry=entry, db_date=datetime.now())
+            db_bucket_list = BucketList(ID=users.get_current_user().user_id(), db_entry=entry, db_date=datetime.now())
             db_bucket_list.put()
             template = JINJA_ENVIRONMENT.get_template('thanks.html')
             self.response.write(template.render())
