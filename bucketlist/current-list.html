@@ -6,17 +6,18 @@
     <h1>My Bucket List</h1>
   </div>
 
-  <form action="delete">
+  <form action="current-list" method="post">
     <section>
       {% for entry in entries %}
       <p>
         {{entry.db_entry}}
-          <input type="checkbox" name={{entry}}><br>
+          <input type="checkbox" value="{{entry.key.urlsafe()}}" name="key"><br>
           {{entry}}
       </p>
       {% endfor %}
     <section>
     <input id="delete" name="delete" value="Delete" type="submit">
+
   </form>
 
 
