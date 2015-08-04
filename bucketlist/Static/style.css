@@ -1,12 +1,12 @@
 body {
-    background-image: url("background.png");
-    background-repeat: no-repeat;
+  background-image: url("bubbles.png");
+  background-repeat: repeat-y;
+  background-color: #cce0f1;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 @import url(http://fonts.googleapis.com/css?family=Aubrey);
 
-/* start navbar stuff */
 #navlist {
     list-style-type: none;
     margin: 0;
@@ -25,14 +25,13 @@ body {
   width: 100%;
   position:absolute;
   top: 95px;
-  left: 10px;
+  left: 200px;
 }
 
 h1 {
   clear: both;
   font-family: 'aubrey', sans-serif;
 }
-/*end navbar stuff */
 
 #newadventure {
   font-family: 'ubuntu';
