@@ -23,6 +23,7 @@ body {
     width: 15%;
     font-family: 'ubuntu';
     float: left;
+    font-size: 20px;
 }
 
 #navbar {
@@ -38,7 +39,7 @@ h1 {
 }
 /*end navbar stuff */
 
-dt {
+#newadventure {
   font-family: 'ubuntu';
 }
 
@@ -114,12 +115,17 @@ textarea {
 
 .headerstuff {
   position: absolute;
-  top: 150px;
-  left: 225px;
+  top: 180px;
+  left: 229px;
 }
 
 #greeting {
   position: absolute;
   top: 150px;
-  left: 7px
+  left: 7px;
+}
+.page_header {
+  position: absolute;
+  top: 120px;
+  left: 229px;
 }
