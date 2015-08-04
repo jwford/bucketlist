@@ -38,6 +38,22 @@ dt {
   font-family: 'ubuntu';
 }
 
+#discover_text {
+  display:none;
+}
+
+#discover_list {
+  display: none;
+}
+
+#discover_theory {
+  display: none;
+}
+
+#discover_links {
+  display: none;
+}
+
 
   .myButton {
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
