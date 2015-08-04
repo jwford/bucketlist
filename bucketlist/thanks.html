@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Thanks!</title>
-    <link rel="stylesheet" type="text/css" href="Static/style.css">
-  </head>
-  <body>
-    <nav id="navbar">
-        <ul id="navlist">
-          <li class="navlinks"><a href = "/">Home</a></li>
-          <li class="navlinks"><a href = "/about-us">About Us</a></li>
-          <li class="navlinks"><a href = "/current-list">Add New Adventure</a></li>
-          <li class="navlinks"><a href = "/current-list">My Current List</a></li>
-          <li class="navlinks"><a href = "/completed-list">Completed Adventures</a></li>
-          <li class="navlinks"><a href = "/discover">Discover!</a></li>
-        </ul>
-    </nav>
+{% extends "base.html" %}
+
+{% block content %}
 
     <div id="thanks_header">
       <br> <h2>Whoohoo! Exciting adventure added!</h2>
     </div>
-  </body>
-</html>
+
+{% endblock %}
