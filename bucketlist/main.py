@@ -35,7 +35,7 @@ class MainHandler(webapp2.RequestHandler):
             greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
                         (user.nickname(), users.create_logout_url('/')))
         else:
-            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>.' %
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
                         users.create_login_url('/'))
 
         self.response.out.write('<html><body>%s</body></html>' % greeting)
