@@ -148,7 +148,7 @@ textarea {
 /* referenced in .py file-- for the sign in or register */
 #greeting {
   position: fixed;
-  top: 370px;
+  top: 392px;
   left: 258px;
 }
 
