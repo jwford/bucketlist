@@ -31,6 +31,11 @@ class BucketList(ndb.Model):
     db_date = ndb.DateTimeProperty(required=True)
     ID = ndb.StringProperty(required=True)
 
+class CompletedList(ndb.Model):
+    db_entry = ndb.StringProperty(required=True)
+    db_date = ndb.DateTimeProperty(required=True)
+    ID = ndb.StringProperty(required=True)
+
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -57,10 +62,7 @@ class AboutHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
         self.response.write(template.render())
 
-class CompletedList(ndb.Model):
-    db_entry = ndb.StringProperty(required=True)
-    db_date = ndb.DateTimeProperty(required=True)
-    ID = ndb.StringProperty(required=True)
+
 
 class NewHandler(webapp2.RequestHandler):
     def get(self):
