@@ -1,15 +1,12 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-    <div class=page_content><h1>Add to your list!</h1>
-      <form method="post" action="/save">
-            <div>
-              <div id="newadventure">New Adventure:</div>
-              <div id="newadventuretext"><textarea name="entry_in_form"></textarea></div>
-            </div>
-            <div id="submit"><input class="buttons" id="submitnew" type="submit"></div>
-      </form>
-    </div>
-
+  <div class=page_content><h1>Add to your list!</h1>
+    <form method="post" action="/save">
+        <div>
+          <div id="newadventure">New Adventure:</div>
+            <div id="newadventuretext"><textarea name="entry_in_form"></textarea></div>
+          </div>
+        <div id="submit"><input class="buttons" type="submit"></div>
+    </form>
+  </div>
 {% endblock %}
