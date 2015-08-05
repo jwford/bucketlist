@@ -49,8 +49,8 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('homepage.html')
         self.response.write(template.render())
         if user:
-            greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
-                        (user.nickname(), users.create_logout_url('/')))
+            greeting = ('<a class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
         else:
             greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
                         users.create_login_url('/'))
