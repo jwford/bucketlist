@@ -31,7 +31,6 @@ body {
 
 #navbar {
   width: 100%;
-  position:absolute;
   top: 80px;
   left: 230px;
 }
@@ -136,8 +135,7 @@ textarea {
 	top:1px;
 }
 
-
-/* No idea what this is */
+/* referenced in .py file-- for the sign in or register */
 #greeting {
   position: absolute;
   top: 150px;
