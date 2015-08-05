@@ -45,6 +45,10 @@ body {
       color: #ffffff;
 }
 
+.navbar a:hover {
+  color: silver;
+}
+
 #rectangle {
   border-radius: 25px;
   background: #9065a1;
