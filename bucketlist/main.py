@@ -49,7 +49,7 @@ class MainHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('homepage.html')
         self.response.write(template.render())
         if user:
-            greeting = ('<a class="buttons" href="%s">Sign out</a>' %
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
                         (users.create_logout_url('/')))
         else:
             greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
@@ -61,6 +61,14 @@ class AboutHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
         self.response.write(template.render())
+        user = users.get_current_user()
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class NewHandler(webapp2.RequestHandler):
     def get(self):
@@ -71,6 +79,13 @@ class NewHandler(webapp2.RequestHandler):
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class BucketListSaver(webapp2.RequestHandler):
     def post(self):
@@ -84,6 +99,14 @@ class BucketListSaver(webapp2.RequestHandler):
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
+        user = users.get_current_user()
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class CurrentHandler(webapp2.RequestHandler):
     def get(self):
@@ -97,6 +120,13 @@ class CurrentHandler(webapp2.RequestHandler):
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
     def post(self):
         print 'delete is ' + self.request.get('delete')
@@ -110,8 +140,15 @@ class CurrentHandler(webapp2.RequestHandler):
             if self.request.get('move') == 'Completed!':
                 db_completed_list = CompletedList(db_entry=result.db_entry, db_date=datetime.now(), ID=result.ID)
                 db_completed_list.put()
-
         return self.get()
+        user = users.get_current_user()
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
@@ -125,11 +162,26 @@ class CompletedHandler(webapp2.RequestHandler):
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 class DiscoverHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('discover.html')
         self.response.write(template.render())
+        user = users.get_current_user()
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 
 app = webapp2.WSGIApplication([
