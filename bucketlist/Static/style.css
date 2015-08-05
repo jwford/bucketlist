@@ -163,4 +163,5 @@ textarea {
   width: 950px;
   height: 85%;
   font-family: 'verdana';
+  z-index: -200;
 }
