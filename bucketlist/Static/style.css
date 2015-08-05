@@ -152,6 +152,11 @@ textarea {
 /* The content on every html page linked */
 .page_content {
   position: absolute;
+  overflow-y: scroll;
   top: 120px;
+  bottom: 0;
+  right: 0;
   left: 258px;
+  width: 950px;
+  height: 80%;
 }
