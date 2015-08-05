@@ -1,12 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Aubrey);
+
+/* Entire body styling*/
+
 body {
   background-image: url("bubbles.png");
   background-repeat: repeat-y;
   background-color: #cce0f1;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
-@import url(http://fonts.googleapis.com/css?family=Aubrey);
-
+/* Navigation styling */
 #navlist {
     list-style-type: none;
     margin: 0;
@@ -45,6 +48,7 @@ body {
   z-index: -100;
 }
 
+
 a {
   text-decoration: none;
 }
@@ -54,19 +58,41 @@ h1 {
   font-family: 'aubrey', sans-serif;
 }
 
-#newadventure {
-  font-family: 'ubuntu';
-}
-
 h3 {
   cursor: pointer;
   font-family: 'aubrey', sans-serif;
 }
 
+/* New Adventure page */
+#newadventure {
+  font-family: 'ubuntu';
+}
+
+#newadventuretext {
+  border-radius: 0;
+  -webkit-appearance: textfield;
+  width: 400px;
+  height: 250px;
+}
+
+textarea {
+  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+  font: normal 14px verdana;
+  line-height: 25px;
+  padding: 2px 10px;
+  border: solid 1px #ddd;
+  width:100%;
+  height:95%;
+  resize: none;
+}
+
+/* Discover page-- Styling done in JS */
 .discover_tabs {
   display:none;
 }
 
+
+/* All the buttons in general */
 .buttons {
   -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
   -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -110,38 +136,23 @@ h3 {
 	top:1px;
 }
 
-#newadventuretext {
-  border-radius: 0;
-  -webkit-appearance: textfield;
-  width: 400px;
-  height: 250px;
-}
 
-textarea {
-  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
-  font: normal 14px verdana;
-  line-height: 25px;
-  padding: 2px 10px;
-  border: solid 1px #ddd;
-  width:100%;
-  height:95%;
-  resize: none;
-}
-
-.page_body {
-  position: absolute;
-  top: 190px;
-  left: 258px;
-}
-
+/* No idea what this is */
 #greeting {
   position: absolute;
   top: 150px;
   left: 7px;
 }
 
+/* The header on every html page linked */
 .page_header {
   position: absolute;
   top: 120px;
+  left: 258px;
+}
+/* The body on every html page linked */
+.page_body {
+  position: absolute;
+  top: 190px;
   left: 258px;
 }
