@@ -144,9 +144,9 @@ textarea {
 
 /* referenced in .py file-- for the sign in or register */
 #greeting {
-  position: absolute;
-  top: 150px;
-  left: 7px;
+  position: fixed;
+  top: 370px;
+  left: 258px;
 }
 
 /* The content on every html page linked */
