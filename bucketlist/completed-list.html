@@ -4,11 +4,11 @@
 
   <div id=completed_header class=page_header><h1>Look at What I've Accomplished</h1></div>
 
-      {% for entry in entries %}
+      <div class=page_body>{% for entry in entries %}
 
           {{entry.db_entry}}<br/>
 
       {% endfor %}
-
+    </div>
 
 {% endblock %}
