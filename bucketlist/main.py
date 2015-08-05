@@ -60,6 +60,7 @@ class AboutHandler(webapp2.RequestHandler):
 class CompletedList(ndb.Model):
     db_entry = ndb.StringProperty(required=True)
     db_date = ndb.DateTimeProperty(required=True)
+    ID = ndb.StringProperty(required=True)
 
 class NewHandler(webapp2.RequestHandler):
     def get(self):
@@ -90,7 +91,7 @@ class CurrentHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            list_query = BucketList.query()
+            list_query = BucketList.query(BucketList.ID == users.get_current_user().user_id())
             list_query = list_query.order(BucketList.db_date)
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('current-list.html')
@@ -110,7 +111,7 @@ class CurrentHandler(webapp2.RequestHandler):
             result = post_key.get()
             post_key.delete()
             if self.request.get('move') == 'Completed!':
-                db_completed_list = CompletedList(db_entry=result.db_entry, db_date=datetime.now())
+                db_completed_list = CompletedList(db_entry=result.db_entry, db_date=datetime.now(), ID=result.ID)
                 db_completed_list.put()
 
         return self.get()
@@ -119,7 +120,7 @@ class CompletedHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            list_query = CompletedList.query()
+            list_query = CompletedList.query(CompletedList.ID == users.get_current_user().user_id())
             list_query = list_query.order(CompletedList.db_date)
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('completed-list.html')
