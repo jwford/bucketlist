@@ -15,7 +15,7 @@ indexes:
   - name: ID
   - name: db_date
 
--kind: completed-list
+- kind: CompletedList
   properties:
-    - name: ID
-    - name: db_date
+  - name: ID
+  - name: db_date
