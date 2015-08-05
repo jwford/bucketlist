@@ -90,7 +90,7 @@ class CurrentHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            list_query = BucketList.query()
+            list_query = BucketList.query(BucketList.ID == users.get_current_user().user_id())
             list_query = list_query.order(BucketList.db_date)
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('current-list.html')
