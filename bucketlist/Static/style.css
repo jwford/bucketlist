@@ -35,9 +35,9 @@ body {
 }
 
 .navbar li {
-    font-family: 'ubuntu';
+    font-family: 'verdana';
     float: left;
-    font-size: 20px;
+    font-size: 18px;
     padding: 15px;
 }
 
@@ -64,12 +64,12 @@ a {
 
 h1 {
   clear: both;
-  font-family: 'aubrey', sans-serif;
+  font-family: 'ubuntu', sans-serif;
 }
 
 h2 {
   cursor: pointer;
-  font-family: 'aubrey', sans-serif;
+  font-family: 'ubuntu', sans-serif;
 }
 
 /* New Adventure page */
@@ -162,4 +162,5 @@ textarea {
   left: 258px;
   width: 950px;
   height: 85%;
+  font-family: 'verdana';
 }
