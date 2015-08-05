@@ -10,22 +10,43 @@ body {
 #navlist {
     list-style-type: none;
     margin: 0;
-    padding: 0;
     text-align: center;
+    z-index: 100;
+    position: fixed;
+    top: 80px;
+    left: 230px;
 }
 
 .navlinks {
-    width: 15%;
+    /*width: 15%;*/
     font-family: 'ubuntu';
     float: left;
     font-size: 20px;
+    padding: 15px;
+    color: #ffffff;
 }
 
 #navbar {
   width: 100%;
   position:absolute;
-  top: 95px;
-  left: 200px;
+  top: 80px;
+  left: 230px;
+}
+
+#rectangle {
+  border-radius: 25px;
+  background: #9065a1;
+  padding: 0px;
+  width: 970px;
+  height: 30px;
+  position: absolute;
+  top: 90px;
+  left: 230px;
+  z-index: -100;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
