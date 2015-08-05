@@ -17,7 +17,14 @@ body {
 }
 
 /* Navigation styling */
-#navlist {
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 80px;
+  left: 230px;
+}
+
+.navbar ul {
     list-style-type: none;
     margin: 0;
     text-align: center;
@@ -27,22 +34,15 @@ body {
     left: 230px;
 }
 
-li.navlinks {
+.navbar li {
     font-family: 'ubuntu';
     float: left;
     font-size: 20px;
     padding: 15px;
 }
 
-#link {
+.navbar a {
       color: #ffffff;
-}
-
-#navbar {
-  width: 100%;
-  position: fixed;
-  top: 80px;
-  left: 230px;
 }
 
 #rectangle {
