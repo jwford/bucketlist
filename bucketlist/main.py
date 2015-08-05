@@ -62,8 +62,6 @@ class AboutHandler(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('about-us.html')
         self.response.write(template.render())
 
-
-
 class NewHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -71,7 +69,6 @@ class NewHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('new-adventure.html')
             self.response.write(template.render())
         else:
-            self.response.write("<a href='/'>Please Log in!</a>")
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
 
@@ -85,7 +82,6 @@ class BucketListSaver(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('thanks.html')
             self.response.write(template.render())
         else:
-            self.response.write("<a href='/'>Please Log in!</a>")
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
 
@@ -99,7 +95,6 @@ class CurrentHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('current-list.html')
             self.response.write(template.render({'entries' : list_data}))
         else:
-            self.response.write("<a href='/'>Please Log in!</a>")
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
 
@@ -128,7 +123,6 @@ class CompletedHandler(webapp2.RequestHandler):
             template = JINJA_ENVIRONMENT.get_template('completed-list.html')
             self.response.write(template.render({'entries' : list_data}))
         else:
-            self.response.write("<a href='/'>Please Log in!</a>")
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
 
