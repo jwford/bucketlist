@@ -9,6 +9,13 @@ body {
   background-color: #cce0f1;
 }
 
+/* The Conquer Tomorrow image */
+#logo {
+  position: fixed;
+  top: 10px;
+  left: 40%;
+}
+
 /* Navigation styling */
 #navlist {
     list-style-type: none;
@@ -21,7 +28,6 @@ body {
 }
 
 .navlinks {
-    /*width: 15%;*/
     font-family: 'ubuntu';
     float: left;
     font-size: 20px;
@@ -31,6 +37,7 @@ body {
 
 #navbar {
   width: 100%;
+  position: fixed;
   top: 80px;
   left: 230px;
 }
@@ -41,7 +48,7 @@ body {
   padding: 0px;
   width: 970px;
   height: 30px;
-  position: absolute;
+  position: fixed;
   top: 90px;
   left: 230px;
   z-index: -100;
@@ -143,14 +150,8 @@ textarea {
 }
 
 /* The header on every html page linked */
-.page_header {
+.page_content {
   position: absolute;
   top: 120px;
-  left: 258px;
-}
-/* The body on every html page linked */
-.page_body {
-  position: absolute;
-  top: 190px;
   left: 258px;
 }

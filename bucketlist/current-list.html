@@ -2,11 +2,11 @@
 
 {% block content %}
 
-  <div id="current_header" class=page_header>
-    <h1>My Bucket List</h1>
-  </div>
+<div class=page_content>
+  <h1>My Bucket List</h1>
 
-  <form action="current-list" method="post" class=page_body>
+
+  <form action="current-list" method="post">
     <section>
       {% for entry in entries %}
       <p>
@@ -15,11 +15,11 @@
       </p>
       {% endfor %}
     <section>
-    <input id="delete" class="buttons" name="delete" value="Delete" type="submit">
-    <input id="move" class="buttons" name="move" value="Completed!" type="submit">
+    <input class="buttons" name="delete" value="Delete" type="submit">
+    <input class="buttons" name="move" value="Completed!" type="submit">
 
   </form>
-
+</div>
 
 
 {% endblock %}
