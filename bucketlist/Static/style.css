@@ -174,3 +174,14 @@ textarea {
         line-height: 18px;
     }
 }
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+}
+
+.social {
+  width: 38px;
+  height: 38px;
+}
