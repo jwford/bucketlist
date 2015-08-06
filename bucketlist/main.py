@@ -150,6 +150,7 @@ class CurrentHandler(webapp2.RequestHandler):
                         users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+
 class CompletedHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -182,6 +183,7 @@ class DiscoverHandler(webapp2.RequestHandler):
             greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
                         users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
+
 
 
 app = webapp2.WSGIApplication([
