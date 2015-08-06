@@ -12,15 +12,15 @@ body {
 /* The Conquer Tomorrow image */
 #logo {
   position: fixed;
-  top: 10px;
-  left: 40%;
+  top: 8px;
+  left: 560px;
 }
 
 /* Navigation styling */
 .navbar {
   width: 100%;
   position: fixed;
-  top: 80px;
+  top: 90px;
   left: 230px;
 }
 
@@ -30,8 +30,9 @@ body {
     text-align: center;
     z-index: 100;
     position: fixed;
-    top: 80px;
+    top: 90px;
     left: 230px;
+    background: #9065a1;
 }
 
 .navbar li {
@@ -43,22 +44,7 @@ body {
 
 .navbar a {
       color: #ffffff;
-}
-
-.navbar a:hover {
-  color: silver;
-}
-
-#rectangle {
-  border-radius: 25px;
-  background: #9065a1;
-  padding: 0px;
-  width: 970px;
-  height: 30px;
-  position: fixed;
-  top: 90px;
-  left: 230px;
-  z-index: -100;
+      text-decoration: none;
 }
 
 /* General formatting */
@@ -78,7 +64,7 @@ h2 {
 
 /* New Adventure page */
 #newadventure {
-  font-family: 'ubuntu';
+  font-family: 'ubuntu', sans-serif;
 }
 
 #newadventuretext {
@@ -128,7 +114,7 @@ textarea {
   font-family:Arial;
   font-size:15px;
   font-weight:bold;
-  padding:5px 5px;
+  padding:11px 23px;
   text-decoration:none;
   text-shadow:0px -1px 0px #2b665e;
 }
@@ -144,6 +130,7 @@ textarea {
 	background-color:#6c7c7c;
 }
 
+/* The buttons (.buttons and #greeting)*/
 .buttons:active {
 	position:relative;
 	top:1px;
@@ -152,19 +139,19 @@ textarea {
 /* referenced in .py file-- for the sign in or register */
 #greeting {
   position: fixed;
-  top: 10px;
-  left: 258px;
+  top: 25px;
+  left: 300px;
 }
 
 /* The content on every html page linked */
 .page_content {
   position: absolute;
   overflow-y: scroll;
-  top: 120px;
+  top: 130px;
   bottom: 0;
   right: 0;
   left: 258px;
-  width: 950px;
+  width: 920px;
   height: 85%;
   font-family: 'verdana';
   z-index: -200;
