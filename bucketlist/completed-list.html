@@ -1,13 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="page_content"><h1>Look at What I've Accomplished</h1>
+  <div class="page_content"><h1>My Completed Adventures</h1>
       <table>
         {% for entry in entries %}
-<<<<<<< HEAD
-          <dt>Completed on: {{entry.db_date.strftime('%B %d, %Y')}}<dt>
-=======
           <dt>Completed on {{entry.db_date.strftime('%B %d, %Y')}}<dt>
->>>>>>> 9540c8030b766190408595d8664d582eae1ca333
+
           <dt>{{entry.db_entry}}</dt><br/>
           {% endfor %}
       </table>
