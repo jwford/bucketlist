@@ -3,17 +3,18 @@
   <div class="page_content"><h1>My Completed Adventures</h1>
     <form action="completed-list" method="post">
       <section>
-      <table>
+
         {% for entry in entries %}
-          <dt>Completed on {{entry.db_date.strftime('%B %d, %Y')}}<dt>
-            <p>
-                <input type="checkbox" value="{{entry.key.urlsafe()}}" name="key">
-                {{entry.db_entry}}
-            </p>
+              <table>
+          <tr><td><input type="checkbox" value="{{entry.key.urlsafe()}}" name="key"></td>
+          <td>Completed on {{entry.db_date.strftime('%B %d, %Y')}}</td>
+          </tr>
+          <tr><td></td><td>{{entry.db_entry}}</td><p></p></tr>
           {% endfor %}
       </table>
       </section>
-        <input class="buttons" name="delete" value="Delete" type="submit">
+      <p>
+        <input class="buttons" name="delete" value="Delete" type="submit"></p>
       </form>
   </div>
 {% endblock %}
