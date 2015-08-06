@@ -7,12 +7,13 @@
     </form> -->
       {% for entry in entries %}
           {{entry.db_entry}}<br/>
-      {% endfor %} <br/>
-      <a href="/new-adventure">
-        <button class="buttons" type="button">Add New Adventure</button>
-      </a>
-      <a href="/current-list">
-        <button class="buttons" type="button">See my Current List</button>
-      </a>
+      {% endfor %} <br/> <br/> <br/>
+
+      <!-- Print -->
+      <a href="javascript:;" onclick="window.print()">
+          <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+
+
     </div>
+
 {% endblock %}
