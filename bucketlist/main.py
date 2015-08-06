@@ -159,6 +159,7 @@ class CompletedHandler(webapp2.RequestHandler):
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('completed-list.html')
             self.response.write(template.render({'entries' : list_data}))
+            self.response.write(template.render({'date' : list_query}))
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
@@ -182,6 +183,7 @@ class DiscoverHandler(webapp2.RequestHandler):
             greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
                         users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
+
 
 
 app = webapp2.WSGIApplication([
