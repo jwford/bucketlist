@@ -15,3 +15,12 @@ $(function() {
     $('#discover_links').fadeToggle(10);
   });
 });
+
+// function print_attempt(print_try){
+// console.log("function started");
+//   var print_content=document.getElementById(print_try).innerHTML;
+//   var page_content=document.body.innerHTML;
+//   document.body.innerHTML=print_content;
+//   window.print();
+//   document.body.innerHTML=page_content;
+// }
