@@ -161,10 +161,15 @@ textarea {
 }
 
 @media print {
+    .navbar, .buttons {
+      display: none;
+    }
+    #logo {
+      float:left;
+    }
     .page_content {
+        display: block;
         background-color: white;
-        height: 50%;
-        width: 50%;
         position: fixed;
         top: 0;
         left: 0;
