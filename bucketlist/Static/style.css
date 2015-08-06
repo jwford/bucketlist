@@ -63,6 +63,7 @@ h1 {
 h2 {
   cursor: pointer;
   font-family: 'ubuntu', sans-serif;
+  text-align: center;
 }
 
 /* New Adventure page */
@@ -158,6 +159,11 @@ textarea {
   font-family: 'verdana';
   z-index: -200;
 }
+
+.page_content#home {
+    text-align: center;
+}
+
 
 /*printing */
 
