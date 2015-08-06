@@ -7,6 +7,12 @@
     </form> -->
       {% for entry in entries %}
           {{entry.db_entry}}<br/>
-      {% endfor %}
+      {% endfor %} <br/>
+      <a href="/new-adventure">
+        <button class="buttons" type="button">Add New Adventure</button>
+      </a>
+      <a href="/current-list">
+        <button class="buttons" type="button">See my Current List</button>
+      </a>
     </div>
 {% endblock %}
