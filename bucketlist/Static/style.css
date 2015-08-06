@@ -161,7 +161,7 @@ textarea {
 }
 
 @media print {
-    .navbar, .buttons {
+    .navbar, .buttons, .print_button {
       display: none;
     }
     #logo {
