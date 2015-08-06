@@ -195,6 +195,13 @@ footer {
   padding: 10px;
 }
 
+.printer {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+/* squad picture */
 #squad {
    width: 300px;
    height: 300px;
