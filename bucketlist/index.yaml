@@ -19,3 +19,9 @@ indexes:
   properties:
   - name: ID
   - name: db_date
+
+- kind: CompletedList
+  properties:
+  - name: ID
+  - name: db_date
+    direction: desc
