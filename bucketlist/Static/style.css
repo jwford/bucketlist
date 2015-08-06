@@ -162,23 +162,23 @@ textarea {
 /*printing */
 
 @media print {
-.navbar, .buttons {
-  display: none;
-  }
-#logo {
-  display:none;
-  }
-.page_content {
-  display: block;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 15px;
-  font-size: 14px;
-  line-height: 18px;
-  }
+    .navbar, .buttons, .print_button {
+      display: none;
+    }
+    #logo {
+      display:none;
+    }
+    .page_content {
+        display: block;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
 }
 
 /*social media footer */

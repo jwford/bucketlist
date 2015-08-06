@@ -171,6 +171,23 @@ class CompletedHandler(webapp2.RequestHandler):
                         users.create_login_url('/'))
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
+    def post(self):
+        print 'delete is ' + self.request.get('delete')
+        key_values = self.request.get('key', allow_multiple=True)
+        for key in key_values:
+            post_key = ndb.Key(urlsafe=key)
+            result = post_key.get()
+            post_key.delete()
+        return self.get()
+        user = users.get_current_user()
+        if user:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign out</a>' %
+                        (users.create_logout_url('/')))
+        else:
+            greeting = ('<a id="greeting" class="buttons" href="%s">Sign in or register</a>' %
+                        users.create_login_url('/'))
+        self.response.out.write('<html><body>%s</body></html>' % greeting)
+
 class DiscoverHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('discover.html')
