@@ -185,6 +185,7 @@ class DiscoverHandler(webapp2.RequestHandler):
         self.response.out.write('<html><body>%s</body></html>' % greeting)
 
 
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler), ('/about-us', AboutHandler), ('/new-adventure', NewHandler),
     ('/current-list', CurrentHandler), ('/completed-list', CompletedHandler),
