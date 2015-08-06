@@ -165,7 +165,7 @@ textarea {
       display: none;
     }
     #logo {
-      float:left;
+      display:none;
     }
     .page_content {
         display: block;
