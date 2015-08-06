@@ -156,7 +156,7 @@ class CompletedHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         if user:
             list_query = CompletedList.query(CompletedList.ID == users.get_current_user().user_id())
-            list_query = list_query.order(CompletedList.db_date)
+            list_query = list_query.order(-CompletedList.db_date)
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('completed-list.html')
             self.response.write(template.render({'entries' : list_data}))
