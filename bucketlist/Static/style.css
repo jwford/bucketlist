@@ -84,7 +84,7 @@ textarea {
   padding: 2px 10px;
   border: solid 1px #ddd;
   width:100%;
-  height:95%;
+  height:80%;
   resize: none;
 }
 
@@ -117,7 +117,7 @@ textarea {
   font-family:Arial;
   font-size:15px;
   font-weight:bold;
-  padding:11px 23px;
+  padding:5px 5px;
   text-decoration:none;
   text-shadow:0px -1px 0px #2b665e;
 }
@@ -158,6 +158,7 @@ textarea {
   height: 85%;
   font-family: 'verdana';
   z-index: -200;
+  font-size: 20px;
 }
 
 @media print {
@@ -189,4 +190,18 @@ footer {
 .social {
   width: 38px;
   height: 38px;
+}
+
+#mountainman {
+  height: 208px;
+  width: 350px;
+  position: absolute;
+  right: 100px;
+  top: 125px;
+}
+
+#submit {
+  position: absolute;
+  left: 0px;
+  top: 345px
 }
