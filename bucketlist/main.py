@@ -159,7 +159,6 @@ class CompletedHandler(webapp2.RequestHandler):
             list_data = list_query.fetch()
             template = JINJA_ENVIRONMENT.get_template('completed-list.html')
             self.response.write(template.render({'entries' : list_data}))
-            self.response.write(template.render({'date' : list_query}))
         else:
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
