@@ -227,5 +227,16 @@ footer {
 #submit {
   position: absolute;
   left: 0px;
-  top: 345px
+  top: 345px;
+}
+#friends {
+  position:absolute;
+  left:210px;
+  top: 120px;
+}
+
+.thanksbuttons {
+  position: absolute;
+  left: 270px;
+  top: 350px;
 }
