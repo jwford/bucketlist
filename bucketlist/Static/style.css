@@ -92,6 +92,7 @@ textarea {
 /* Discover page-- Styling done in JS */
 .discover_tabs {
   display:none;
+  text-align: left;
 }
 
 /* All the buttons in general */
