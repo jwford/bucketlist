@@ -90,13 +90,17 @@ class NewHandler(webapp2.RequestHandler):
 class BucketListSaver(webapp2.RequestHandler):
     def post(self):
         user = users.get_current_user()
+        #getting user- if user, then execute following code:
         if user:
+            #if there is a user, then we get their entry from the entry form
             entry = self.request.get('entry_in_form')
+            #update our bucket list to include the new entry- organize according to date and time
             db_bucket_list = BucketList(ID=users.get_current_user().user_id(), db_entry=entry, db_date=datetime.now())
             db_bucket_list.put()
             template = JINJA_ENVIRONMENT.get_template('thanks.html')
             self.response.write(template.render())
         else:
+            #redirect to log in page
             template = JINJA_ENVIRONMENT.get_template('log-in.html')
             self.response.write(template.render())
         user = users.get_current_user()
